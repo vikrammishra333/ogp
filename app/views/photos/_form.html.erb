@@ -1,0 +1,49 @@
+<%= form_for([current_user,@gallery,@photo]) do |f| %>
+
+  <% if @photo.errors.any? %>
+
+    <div id="error_explanation">
+      
+      <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+
+      <ul>
+        
+        <% @photo.errors.full_messages.each do |msg| %>
+        
+          <li><%= msg %></li>
+          
+        <% end %>
+          
+      </ul>
+      
+    </div>
+
+  <% end %>
+
+  <%= f.hidden_field :gallery_id %>
+
+  <div class="field">
+    
+    <%= f.label :name %>
+    <%= f.text_field :name, :class => "input-text-340" %>
+    
+  </div>
+  <div class="field">
+    
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    
+  </div>
+  <div class="field">
+    
+    <%= f.label :remote_image_url, "or image URL" %>
+    <%= f.text_field :remote_image_url, :class => "input-text-340" %>
+    
+  </div>
+  <div class="actions">
+    
+    <%= f.submit "#{controller.action_name == "new" ? "Upload" : "Update"} Photo" %>
+    
+  </div>
+
+<% end %>

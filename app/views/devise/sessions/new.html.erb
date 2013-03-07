@@ -1,0 +1,52 @@
+<div class="login-page-div">
+  
+  <div class="login-image">
+  
+    <%= image_tag "goalplan.jpg" %>
+  
+  </div>
+  <br />
+  <div class="login-form">
+  
+    <h4>Sign in</h4>
+
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+      <div>
+
+        <%= f.label :login, "Email or Username" %>
+        <%= f.text_field :login, :autofocus => true, :class => "input-text-340" %>
+
+      </div>
+
+      <div>
+
+        <%= f.label :password %>
+        <%= f.password_field :password, :class => "input-text-340" %>
+
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+
+        <div>
+
+          <%= f.check_box :remember_me, :class => "inline" %> 
+          <%= f.label :remember_me, "Remember me unless I sign out", :class => "inline" %>
+
+        </div>
+
+      <% end -%>
+
+      <div>
+
+        <%= f.submit "Sign in", :class => "btn btn-primary" %>
+
+      </div>
+
+    <% end %>
+
+    <%#= render "devise/shared/links" %>
+   
+  </div>
+
+</div>

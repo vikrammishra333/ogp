@@ -1,0 +1,43 @@
+<p>
+
+  <%= link_to "Add a Photo", new_user_gallery_photo_path(current_user, @gallery) %> |
+  <%= link_to "Remove Gallery", user_gallery_path(current_user, @gallery), :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View Galleries", user_galleries_path(current_user) %>
+
+</p>
+
+<% unless @gallery.photos.length > 0 %>
+
+  <h5 class="error">
+
+    You have either not added any photo to this gallery or have deleted all photos.
+
+  </h5>
+
+<% else %>
+
+  <div id="photos">
+
+    <% for photo in @gallery.photos %>
+
+      <div class="photo">
+
+        <%= image_tag(photo.image_url(:thumb), :size => "200x200") if photo.image? %>
+
+        <div class="name"><%= photo.name %></div>
+        <div class="actions">
+
+          <%= link_to "edit", edit_user_gallery_photo_path(current_user,@gallery,photo) %> |
+          <%= link_to "remove", user_gallery_photo_path(current_user,@gallery,photo), :confirm => 'Are you sure?', :method => :delete %>
+
+        </div>
+
+      </div>
+
+    <% end %>
+
+    <div class="clear"></div>
+
+  </div>
+
+<% end %>

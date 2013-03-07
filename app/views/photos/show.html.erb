@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Gallery:</b>
+  <%= @photo.gallery_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @photo.name %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @photo.image %>
+</p>
+
+<p>
+  <b>Remote image url:</b>
+  <%= @photo.remote_image_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>

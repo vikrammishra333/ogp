@@ -1,0 +1,45 @@
+<div class="login-page-div">
+  
+  <div class="login-image">
+  
+    <%= image_tag "goalplan.jpg" %>
+  
+  </div>
+  <br />
+  <div class="login-form">
+    
+    <h4>Change your password</h4>
+
+    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+    
+      <%= devise_error_messages! %>
+    
+      <%= f.hidden_field :reset_password_token %>
+
+      <div>
+        
+        <%= f.label :password, "New password" %>
+        <%= f.password_field :password, :autofocus => true, :class => "input-text-340" %>
+      
+      </div>
+
+      <div>
+        
+        <%= f.label :password_confirmation, "Confirm new password" %>
+        <%= f.password_field :password_confirmation, :class => "input-text-340" %>
+      
+      </div>
+
+      <div>
+        
+        <%= f.submit "Change my password", :class => "btn btn-primary" %>
+      
+      </div>
+      
+    <% end %>
+    
+  </div>
+  
+</div>
+
+<%#= render "devise/shared/links" %>

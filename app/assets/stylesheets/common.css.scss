@@ -1,0 +1,101 @@
+// Place all the styles common to the application.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a img {
+  border: none;
+}
+
+a {
+  color: #0000FF;
+}
+
+.row-fluid .span9 h5.error{
+    color: red;
+    border: 1px solid #ff00ff;
+    text-align: center;
+    width: 500px;
+    padding: 20px;
+    left: 29%;
+    top: 50px;
+    position: relative;
+}
+
+a {
+    color: blue;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+ .row-fluid {
+     min-height: 450px;
+ }
+
+ footer {
+     text-align: center;
+     margin-top: 20px;
+     border-top: 1px dotted cyan;
+ }
+
+ .input-text-area {
+     width: 340px;
+     height: auto;
+ }
+
+.input-text-340 {
+    width: 340px;
+}
+
+.inline, .inline[type="checkbox"] {
+
+    display: inline;
+    margin: 0px;
+
+}
+
+.row-fluid .span9 {
+
+    width: 100%;
+    text-align: center;
+
+    .login-form, .reg-form {
+
+        text-align: left;
+
+        div:last-child {
+
+            margin-top: 10px;
+
+        }
+    }
+
+    .login-form {
+
+
+        width: 500px;
+        left: 37%;
+        position: relative;
+
+    }
+
+    .reg-form {
+
+        width: 70%;
+        left: 23%;
+        position: relative;
+        .login-info, .extra-info {
+            float: left;
+            display: inline;
+            margin-right: 20px;
+        }
+        div:last-child {
+
+           margin: 0;
+
+        }
+    }
+}

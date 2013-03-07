@@ -1,0 +1,40 @@
+<p><%= link_to 'New Gallery', new_user_gallery_path(current_user) %></p>
+  
+<% unless @galleries.length > 0 %>
+
+  <h5 class="error">
+    
+    We can not find any gallery for you. It seems that either you have not created or have deleted it.
+    Please <%= link_to 'Create One', new_user_gallery_path(current_user) %> here and enjoy.
+
+  </h5>
+
+<% else %>
+
+  <% for gallery in @galleries %>
+
+    <div class="gallery">
+
+      <div class="album-cover">
+
+        <%= link_to(image_tag(get_random_photo_from_gallery(gallery).image_url(:thumb)),
+                              user_gallery_path(current_user, gallery)) unless gallery.photos.blank? %>
+
+      </div>
+      <div class="album-detail">
+
+        <h4>
+
+          <%= link_to gallery.title+"(#{gallery.photos.size})", user_gallery_path(current_user, gallery) %>
+          
+        </h4>
+        <%= link_to 'Edit', edit_user_gallery_path(current_user, gallery) %> |
+        <%= link_to 'Destroy', user_gallery_path(current_user, gallery), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+      </div>
+
+    </div>
+
+  <% end %>
+
+<% end %>

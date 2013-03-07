@@ -1,0 +1,79 @@
+<div class="user-profile-info">
+
+  <div class="profile-details">
+
+    <div class="profile-header">
+
+      <span>Personal Information</span>
+
+    </div>
+    <div class="profile-detail">
+
+      <span><h5>Name:</h5></span>
+      <span><%= @user.name %></span>
+      <span><h5>Date Of Birth:</h5></span>
+      <span><%= @user.dob unless @user.dob.nil? %></span>
+      <span><h5>Gender:</h5></span>
+      <span><%= @user.gender unless @user.gender.nil? %></span>
+      <span><h5>Religion:</h5></span>
+      <span><%= @user.religion unless @user.religion.nil? %></span>
+      <span><h5>About You:</h5></span>
+      <span><%= @user.about_you unless @user.about_you.nil? %></span>
+
+    </div>
+
+  </div>
+  <div class="profile-details">
+
+    <div class="profile-header">
+
+      <span>Professional Information</span>
+
+    </div>
+    <div class="profile-detail">
+
+      <span><h5>Email:</h5></span>
+      <span><%= @user.email %></span>
+      <span><h5>Username:</h5></span>
+      <span><%= @user.username %></span>
+
+    </div>
+
+  </div>
+  <div class="profile-details">
+
+    <div class="profile-header">
+
+      <span>Contact Information</span>
+
+    </div>
+    <div class="profile-detail">
+
+      <span><h5>Email:</h5></span>
+      <span><%= @user.email %></span>
+      <span><h5>Username:</h5></span>
+      <span><%= @user.username %></span>
+
+    </div>
+
+  </div>
+  <div class="profile-details">
+
+    <div class="profile-header">
+
+      <span>Login Information</span>
+
+    </div>
+    <div class="profile-detail">
+
+      <span><h5>Email:</h5></span>
+      <span><%= @user.email %></span>
+      <span><h5>Username:</h5></span>
+      <span><%= @user.username %></span>
+      <span><%= gravatar_image_tag(@user.email) %></span>
+
+    </div>
+
+  </div>
+  
+</div>
