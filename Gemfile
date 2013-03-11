@@ -23,3 +23,18 @@ gem 'rmagick'
 gem 'carrierwave'
 gem 'gravatar_image_tag'
 gem 'email_verifier'
+
+group :development, :test do
+  gem 'database_cleaner'
+  #gem 'cucumber-rails'
+  gem 'capybara', '1.1.2'
+  gem 'factory_girl_rails', '1.4.0'
+  gem 'shoulda-matchers'
+  gem 'rspec-rails', '2.9.0'
+  gem 'rspec-core'
+  gem 'guard-rspec', '0.5.5'
+  gem 'email_spec'
+  gem 'ruby-debug19', :require => 'ruby-debug'
+end
+
+gem 'simplecov', :require => false, :group => :test

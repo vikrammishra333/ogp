@@ -21,7 +21,7 @@
       <td><%= user.email %></td>
       <td><%= user.username %></td>
       <td><%= link_to "Show", user %></td>
-      <td><%= link_to "Edit", "#" %></td>
+      <td><%= link_to "Edit", edit_user_registration_path(user) %></td>
       <td><%= link_to "Delete", user, :method => :delete %></td>
     </tr>
   
